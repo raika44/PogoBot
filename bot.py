@@ -444,6 +444,7 @@ def bot(op):
                         pass
                     else:
                         wait["blacklist"][op.param2] = True
+			
         if op.type == 13:
             if dmid in op.param3:
                 G = cl.getGroup(op.param1)
