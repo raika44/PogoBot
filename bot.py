@@ -433,14 +433,26 @@ def bot(op):
                     pass
                 else:
                     cl.cancelGroupInvitation(op.param1, matched_list)
-
-        if op.type == 11:
-           if wait["protect"] == True:
-               if op.param2 not in Bots:
-                   G = ka.getGroup(op.param1)
-                   G.preventJoinByTicket = True
-                   random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
-                   random.choice(DEF).updateGroup(G)
+        if op.type == 17:
+            if op.param2 not in Bots:
+                if op.param2 in Bots:
+                    pass
+            if wait["protect"] == True:
+                try:
+                    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                    G = random.choice(KAC).getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    random.choice(KAC).updateGroup(G)
+#           random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                except:
+                    try:
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        G = random.choice(KAC).getGroup(op.param1)
+                        G.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(G)
+#               random.choice(KAK).kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        pass
 
         if op.type == 13:
             if op.param2 not in Bots:
