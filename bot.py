@@ -187,50 +187,34 @@ def bot(op):
                 pass
 
         if op.type == 13:
-                if op.param3 in dmid:
-                    if op.param2 in Amid:
-                        G = ki.getGroup(op.param1)
-                        G.preventJoinByTicket = False
-                        ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
-                        cl.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        G.preventJoinByTicket = True
-                        ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
-
-                if op.param3 in Amid:
-                    if op.param2 in Bmid:
-                        X = kk.getGroup(op.param1)
-                        X.preventJoinByTicket = False
-                        kk.updateGroup(X)
-                        Ti = kk.reissueGroupTicket(op.param1)
-                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
-                        X.preventJoinByTicket = True
-                        kk.updateGroup(X)
-                        Ti = kk.reissueGroupTicket(op.param1)
-
-                if op.param3 in Bmid:
-                    if op.param2 in Cmid:
-                        X = kc.getGroup(op.param1)
-                        X.preventJoinByTicket = False
-                        kc.updateGroup(X)
-                        Ti = kc.reissueGroupTicket(op.param1)
-                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
-                        X.preventJoinByTicket = True
-                        kc.updateGroup(X)
-                        Ti = kc.reissueGroupTicket(op.param1)
-
-                if op.param3 in Cmid:
-                    if op.param2 in dmid:
-                        X = cl.getGroup(op.param1)
-                        X.preventJoinByTicket = False
-                        cl.updateGroup(X)
-                        Ti = cl.reissueGroupTicket(op.param1)
-                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
-                        X.preventJoinByTicket = True
-                        cl.updateGroup(X)
-                        Ti = cl.reissueGroupTicket(op.param1)
-
+            if dmid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  cl.acceptGroupInvitation(op.param1)
+                else:
+                  cl.rejectGroupInvitation(op.param1)
+		
+            if Amid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  ki.acceptGroupInvitation(op.param1)
+                else:
+                  ki.rejectGroupInvitation(op.param1)
+		
+            if Bmid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  kk.acceptGroupInvitation(op.param1)
+                else:
+                  kk.rejectGroupInvitation(op.param1)
+		
+            if Cmid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  kc.acceptGroupInvitation(op.param1)
+                else:
+                  kc.rejectGroupInvitation(op.param1)
+		
         if op.type == 13:
                 if dmid in op.param3:
                     if wait["autoJoin"] == True:
@@ -261,12 +245,7 @@ def bot(op):
                         kc.sendText(op.param1,'dasar generasi micin')
                     else:
                         print "Error"
-                        
-        if op.type == 19:
-                    if op.param3 not in Bots:
-                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                        random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
-                        
+                             
         if op.type == 19:
                     if op.param3 in Bots:
                         random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
