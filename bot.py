@@ -213,14 +213,14 @@ def bot(op):
 
                 if op.param3 in Amid:
                     if op.param2 in Bots or owner:
-                        X = kk.getGroup(op.param1)
+                        X = kc.getGroup(op.param1)
                         X.preventJoinByTicket = False
                         kk.updateGroup(X)
-                        Ti = kk.reissueGroupTicket(op.param1)
+                        Ti = kc.reissueGroupTicket(op.param1)
                         ki.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         kk.updateGroup(X)
-                        Ti = kk.reissueGroupTicket(op.param1)
+                        Ti = kc.reissueGroupTicket(op.param1)
 
                 if op.param3 in Bmid:
                     if op.param2 in Bots or owner:
@@ -239,7 +239,7 @@ def bot(op):
                         X.preventJoinByTicket = False
                         cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
-                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
