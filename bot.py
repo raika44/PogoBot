@@ -388,10 +388,10 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = kc.getGroup(op.param1)
+                    X = random.choice(KAC.getGroup(op.param1)
                     X.preventJoinByTicket = False
-                    kc.updateGroup(X)
-                    Ti = kc.reissueGroupTicket(op.param1)
+                    random.choice(KAC.updateGroup(X)
+                    Ti = random.choice(KAC.reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
@@ -426,10 +426,10 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = cl.getGroup(op.param1)
+                    X = random.choice(KAC.getGroup(op.param1)
                     X.preventJoinByTicket = False
-                    cl.updateGroup(X)
-                    Ti = cl.reissueGroupTicket(op.param1)
+                    random.choice(KAC.updateGroup(X)
+                    Ti = random.choice(KAC.reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
