@@ -94,7 +94,6 @@ Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
 Bots = [dmid,Amid,Bmid,Cmid,"u5427d8047ab127f5e237eaedd1f0b93b"]
 admin = ["u5427d8047ab127f5e237eaedd1f0b93b"]
-owner = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 staff = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 adminMID = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 wait = {
