@@ -200,7 +200,7 @@ def bot(op):
         #------Protect Group Kick finish-----#
 	
         if op.type == 13:
-            if mid in op.param3:
+            if dmid in op.param3:
               if wait["autoJoin"] == True:
                 if op.param2 in Bots or owner:
                   cl.acceptGroupInvitation(op.param1)
