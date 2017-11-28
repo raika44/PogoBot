@@ -94,6 +94,7 @@ Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
 Bots = [dmid,Amid,Bmid,Cmid,"u5427d8047ab127f5e237eaedd1f0b93b"]
 admin = ["u5427d8047ab127f5e237eaedd1f0b93b"]
+owner = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 staff = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 adminMID = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 wait = {
@@ -244,16 +245,6 @@ def bot(op):
                         cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
 			
-            else:
-                Inviter = op.param3.replace("",',')
-                InviterX = Inviter.split(",")
-                matched_list = []
-                for tag in wait["blacklist"]:
-                    matched_list+=filter(lambda str: str == tag, InviterX)
-                if matched_list == []:
-                    pass
-                else:
-                    cl.cancelGroupInvitation(op.param1, matched_list)
 		
         if op.type == 13:
                 if dmid in op.param3:
