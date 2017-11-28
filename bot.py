@@ -250,8 +250,8 @@ def bot(op):
                     if wait["autoJoin"] == True:
                         cl.acceptGroupInvitation(op.param1)
                         print "Bot 1 Join"
-                        cl.sendText(op.param1,'Hallo Sayang 􀜁􀅹Love􏿿')
-                        cl.sendText(op.param1,'Daftar Command? Ketik /help')
+                        cl.sendText(op.param1,'Hallo Sayang')
+                        cl.sendText(op.param1,'knp sayang?)
                     else:
                         print "Error"
                 if Amid in op.param3:
@@ -265,14 +265,14 @@ def bot(op):
                     if wait["autoJoin"] == True:
                         kk.acceptGroupInvitation(op.param1)
                         print "Bot 3 Join"
-                        kk.sendText(op.param1,'apa kabar jones?')
+                        kk.sendText(op.param1,'aku disini')
                     else:
                         print "Error"
                 if Cmid in op.param3:
                     if wait["autoJoin"] == True:
                         kc.acceptGroupInvitation(op.param1)
                         print "Bot 4 Join"
-                        kc.sendText(op.param1,'dasar generasi micin')
+                        kc.sendText(op.param1,'ah mouu knp?')
                     else:
                         print "Error"
                              
