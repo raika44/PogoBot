@@ -1155,7 +1155,7 @@ def bot(op):
                         kc.acceptGroupInvitationByTicket(msg.to,Ticket)
                         time.sleep(0.2)
                         kc.sendText(msg.to,"aku disini yang")
-                        G = cl.getGroup(msg.to))
+                        G = cl.getGroup(msg.to)
                         G = cl.getGroup(msg.to)
                         G.preventJoinByTicket = True
                         cl.updateGroup(G)
