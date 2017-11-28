@@ -205,7 +205,7 @@ def bot(op):
                         G = random.choice(KAC).getGroup(op.param1)
                         G.preventJoinByTicket = False
                         random.choice(KAC).updateGroup(G)
-                        Ticket = random.choice(KAC)d.reissueGroupTicket(op.param1)
+                        Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(G)
