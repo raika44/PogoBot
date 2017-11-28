@@ -1102,6 +1102,8 @@ def bot(op):
                 else:md+="[*] Auto add : off\n"
                 if wait["protect"] == True: md+="[*] Protect : on\n"
                 else:md+="[*] Protect : off\n"
+                if wait["Protectgr"] == True: md+="[*] Protectgr : on\n"
+                else:md+="[*] Block Group : off\n"
                 if wait["linkprotect"] == True: md+="[*] Link Protect : on\n"
                 else:md+="[*] Link Protect : off\n"
                 if wait["inviteprotect"] == True: md+="[*] Invite Protect : on\n"
