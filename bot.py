@@ -1113,9 +1113,10 @@ def bot(op):
                     try:
                         ki.sendText(msg.to,"see you yang")
                         ki.leaveGroup(msg.to)
-			            kk.sendText(msg.to,"makasih sayang")
+			kk.sendText(msg.to,"makasih sayang")
                         kk.leaveGroup(msg.to)
-			            kc.sendText(msg.to,"dadah bebih")
+			kc.sendText(msg.to,"dadah bebih")
+			kc.leaveGroup(msg.to)
                     except:
                         pass
 #----------------------------------------------------------------------------
