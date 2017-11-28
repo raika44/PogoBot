@@ -266,22 +266,24 @@ def bot(op):
                         pass
                     try:
                         ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                    	    random.choice(KAC).inviteIntoGroup(op.param1,[Bots])
+                            random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
                         except:
-                            print ("client Kick regulation or Because it does not exist in the group?\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
+                            print ("client Kick regulation or Because it does not exist in the group、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                    G = ki.getGroup(op.param1)
+                    G = random.choice(KAC).getGroup(op.param1)
                     G.preventJoinByTicket = False
-                    ki.updateGroup(G)
-                    Ti = ki.reissueGroupTicket(op.param1)
+                    random.choice(KAC).updateGroup(G)
+                    Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
@@ -316,10 +318,10 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = kk.getGroup(op.param1)
+                    X = random.choice(KAC).getGroup(op.param1)
                     X.preventJoinByTicket = False
-                    cl.updateGroup(X)
-                    Ti = kk.reissueGroupTicket(op.param1)
+                    random.choice(KAC).updateGroup(X)
+                    Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
@@ -352,10 +354,10 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = kc.getGroup(op.param1)
+                    X = random.choice(KAC).getGroup(op.param1)
                     X.preventJoinByTicket = False
-                    kc.updateGroup(X)
-                    Ti = kc.reissueGroupTicket(op.param1)
+                    random.choice(KAC).updateGroup(X)
+                    Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
@@ -389,10 +391,10 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = cl.getGroup(op.param1)
+                    X = random.choice(KAC).getGroup(op.param1)
                     X.preventJoinByTicket = False
-                    cl.updateGroup(X)
-                    Ti = cl.reissueGroupTicket(op.param1)
+                    random.choice(KAC).updateGroup(X)
+                    Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
