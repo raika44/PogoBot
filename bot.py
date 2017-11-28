@@ -237,7 +237,7 @@ def bot(op):
                     if op.param2 in Bots or owner:
                         X = cl.getGroup(op.param1)
                         X.preventJoinByTicket = False
-                        random.choice(KAC).updateGroup(X)
+                        cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
                         kc.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
