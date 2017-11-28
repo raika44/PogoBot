@@ -251,7 +251,7 @@ def bot(op):
                         cl.acceptGroupInvitation(op.param1)
                         print "Bot 1 Join"
                         cl.sendText(op.param1,'Hallo Sayang')
-                        cl.sendText(op.param1,'knp sayang?)
+                        cl.sendText(op.param1,'knp sayang?')
                     else:
                         print "Error"
                 if Amid in op.param3:
