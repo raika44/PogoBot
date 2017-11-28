@@ -91,7 +91,7 @@ dmid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
-Bots = [dmid,Amid,Bmid,Cmid]
+Bots = [dmid,Amid,Bmid,Cmid,"u5427d8047ab127f5e237eaedd1f0b93b"]
 admin = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 staff = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 adminMID = ["u5427d8047ab127f5e237eaedd1f0b93b"]
@@ -228,7 +228,7 @@ def bot(op):
                     if wait["autoJoin"] == True:
                         ki.acceptGroupInvitation(op.param1)
                         print "Bot 2 Join"
-                        ki.sendText(op.param1,'welcome')
+                        ki.sendText(op.param1,'aku datang sayang')
                     else:
                         print "Error"
                 if Bmid in op.param3:
@@ -247,9 +247,18 @@ def bot(op):
                         print "Error"
                              
         if op.type == 19:
-                    if op.param3 in Bots:
-                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                        random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+           if op.param2 not in Bots:
+              random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
+              random.choice(DEF).inviteIntoGroup(op.param1,[op.param3])
+           else: 
+               pass
+
+        if op.type == 19:
+           if op.param3 in admin:
+              random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+              cl.inviteIntoGroup(op.param1,admin)
+           else:
+               pass
 
         if op.type == 19:
                 if dmid in op.param3:
@@ -260,7 +269,7 @@ def bot(op):
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                    	    random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+                    	    random.choice(KAC).inviteIntoGroup(op.param1,[Bots])
                         except:
                             print ("client Kick regulation or Because it does not exist in the group?\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
                         if op.param2 in wait["blacklist"]:
@@ -297,7 +306,7 @@ def bot(op):
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                    	    random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+                    	    random.choice(KAC).inviteIntoGroup(op.param1,[Bots])
                         except:
                             print ("client?????or????????????\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
                         if op.param2 in wait["blacklist"]:
@@ -333,7 +342,7 @@ def bot(op):
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                    	    random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+                    	    random.choice(KAC).inviteIntoGroup(op.param1,[Bots])
                         except:
                             print ("client?????or????????????\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
                         if op.param2 in wait["blacklist"]:
@@ -1222,7 +1231,7 @@ def bot(op):
 #-------------------------------- WELCOME -----------------------------------
             if msg.text.lower() in ["wc","welcome"]:
                 ginfo = cl.getGroup(msg.to)
-                cl.sendText(msg.to,"Selamat Datang Di jones room" + str(ginfo.name))
+                cl.sendText(msg.to,"Selamat Datang Di jones" + str(ginfo.name))
             elif msg.text in ["Salam jones"]:
                 ki.sendText(msg.to,"salam jones juga 􀜁􀅔Har Har􏿿")
                 kc.sendText(msg.to,"salam jones juga 􀜁􀅔Har Har􏿿")
