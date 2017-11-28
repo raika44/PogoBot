@@ -1593,7 +1593,7 @@ def bot(op):
 #----------------------------------------------------------------------------
 #------------------------------- Kerang Ajaib -------------------------------
             elif "Apakah " in msg.text.lower():
-                apk = msg.text.replace("/apakah ","")
+                apk = msg.text.replace("Apakah ","")
                 rnd = ['Ya','Tidak']
                 p = random.choice(rnd)
                 cl.sendText(msg.to,p)
