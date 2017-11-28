@@ -87,6 +87,7 @@ Bot lohhh
 """
 
 KAC=[cl,ki,kk,kc]
+DEF=[cl,ki,kk,kc]
 dmid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
@@ -273,7 +274,7 @@ def bot(op):
                pass
 
         if op.type == 19:
-                if dmid in op.param3:
+                if mid in op.param3:
                     if op.param2 in Bots:
                         pass
                     try:
@@ -310,19 +311,20 @@ def bot(op):
                         pass
                     else:
                         wait["blacklist"][op.param2] = True
-
+ 
                 if Amid in op.param3:
                     if op.param2 in Bots:
                         pass
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
                         kk.kickoutFromGroup(op.param1,[op.param2])
                         kc.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                    	    random.choice(KAC).inviteIntoGroup(op.param1,[Bots])
+                            random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
                         except:
-                            print ("client?????or????????????\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
+                            print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
@@ -337,6 +339,7 @@ def bot(op):
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = ki.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     ki.updateGroup(G)
@@ -347,18 +350,20 @@ def bot(op):
                         pass
                     else:
                         wait["blacklist"][op.param2] = True
+
                 if Bmid in op.param3:
                     if op.param2 in Bots:
                         pass
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
                         kc.kickoutFromGroup(op.param1,[op.param2])
-                        kk.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                    	    random.choice(KAC).inviteIntoGroup(op.param1,[Bots])
+                            random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
                         except:
-                            print ("client?????or????????????\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
+                            print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
@@ -394,8 +399,9 @@ def bot(op):
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
                         except:
-                            print ("client?????or????????????\n["+op.param1+"]\n?\n["+op.param2+"]\n??????????????\n??????????????")
+                            print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
