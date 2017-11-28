@@ -115,7 +115,7 @@ wait = {
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":True,
-    "protect":False,
+    "protect":True,
     "cancelprotect":False,
     "inviteprotect":False,
     "linkprotect":True,
