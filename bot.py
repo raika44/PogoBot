@@ -202,14 +202,14 @@ def bot(op):
         if op.type == 13:
                 if op.param3 in dmid:
                     if op.param2 in Bots or owner:
-                        G = ki.getGroup(op.param1)
+                        G = Amid.getGroup(op.param1)
                         G.preventJoinByTicket = False
-                        ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
+                        Amid.updateGroup(G)
+                        Ticket =Amid.reissueGroupTicket(op.param1)
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
+                        Amid.updateGroup(G)
+                        Ticket = Amid.reissueGroupTicket(op.param1)
 
                 if op.param3 in Amid:
                     if op.param2 in Bots or owner:
