@@ -176,19 +176,17 @@ def bot(op):
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
 
-def NOTIFIED_READ_MESSAGE(op):
-    try:
-        if op.param1 in wait2['readPoint']:
-            Name = cl.getContact(op.param2).displayName
-            if Name in wait2['readMember'][op.param1]:
-                pass
+        if op.type == 55:
+            if op.param1 in wait2['readPoint']:
+                Name = cl.getContact(op.param2).displayName
+                if Name in wait2['readMember'][op.param1]:
+                    pass
+                else:
+                    wait2['readMember'][op.param1] += '\n ☞ ' + Name
+                    wait2['ROM'][op.param1][op.param2] = '☞ ' + Name
             else:
-                wait2['readMember'][op.param1] += "\n・" + Name
-                wait2['ROM'][op.param1][op.param2] = "・" + Name
-        else:
-            pass
-    except:
-        pas
+                pass
+
 
         #------Protect Group Kick start------#
         if op.type == 11:
