@@ -176,17 +176,30 @@ def bot(op):
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
 
-        if op.type == 55:
-            if op.param1 in wait2['readPoint']:
-                Name = cl.getContact(op.param2).displayName
-                if Name in wait2['readMember'][op.param1]:
-                    pass
-                else:
-                    wait2['readMember'][op.param1] += '\n ☞ ' + Name
-                    wait2['ROM'][op.param1][op.param2] = '☞ ' + Name
-            else:
+def NOTIFIED_READ_MESSAGE(op):
+    try:
+        if op.param1 in wait2['readPoint']:
+            Name = cl.getContact(op.param2).displayName
+            if Name in wait2['readMember'][op.param1]:
                 pass
+            else:
+                wait2['readMember'][op.param1] += "\n・" + Name
+                wait2['ROM'][op.param1][op.param2] = "・" + Name
+        else:
+            pass
+    except:
+        pas
 
+        #------Protect Group Kick start------#
+        if op.type == 11:
+           if wait["Protectgr"] == True:
+               if op.param2 not in Bots:
+                   G = ka.getGroup(op.param1)
+                   G.preventJoinByTicket = True
+                   random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
+                   random.choice(DEF).updateGroup(G)
+        #------Protect Group Kick finish-----#
+	
         if op.type == 13:
             if dmid in op.param3:
               if wait["autoJoin"] == True:
@@ -434,14 +447,6 @@ def bot(op):
                     pass
                 else:
                     cl.cancelGroupInvitation(op.param1, matched_list)
-		
-        if op.type == 11:
-           if wait["Protectgr"] == True:
-               if op.param2 not in Bots:
-                   G = ka.getGroup(op.param1)
-                   G.preventJoinByTicket = True
-                   random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
-                   random.choice(DEF).updateGroup(G)
 		
         if op.type == 17:
             if op.param2 not in Bots:
