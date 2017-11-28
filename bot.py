@@ -202,47 +202,47 @@ def bot(op):
         if op.type == 13:
                 if op.param3 in dmid:
                     if op.param2 in Bots or owner:
-                        G = random.choice(KAC).getGroup(op.param1)
+                        G = ki.getGroup(op.param1)
                         G.preventJoinByTicket = False
-                        random.choice(KAC).updateGroup(G)
+                        ki.updateGroup(G)
                         Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        random.choice(KAC).updateGroup(G)
-                        Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        ki.updateGroup(G)
+                        Ticket = ki.reissueGroupTicket(op.param1)
 
                 if op.param3 in Amid:
                     if op.param2 in Bots or owner:
-                        X = random.choice(KAC).getGroup(op.param1)
+                        X = kk.getGroup(op.param1)
                         X.preventJoinByTicket = False
-                        random.choice(KAC).updateGroup(X)
-                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        kk.updateGroup(X)
+                        Ti = kk.reissueGroupTicket(op.param1)
                         ki.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
-                        random.choice(KAC).updateGroup(X)
-                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        kk.updateGroup(X)
+                        Ti = kk.reissueGroupTicket(op.param1)
 
                 if op.param3 in Bmid:
                     if op.param2 in Bots or owner:
-                        X = random.choice(KAC).getGroup(op.param1)
+                        X = kc.getGroup(op.param1)
                         X.preventJoinByTicket = False
-                        random.choice(KAC).updateGroup(X)
-                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        kc.updateGroup(X)
+                        Ti = kc.reissueGroupTicket(op.param1)
                         kk.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
-                        random.choice(KAC).updateGroup(X)
-                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        kc.updateGroup(X)
+                        Ti = kc.reissueGroupTicket(op.param1)
 
                 if op.param3 in Cmid:
                     if op.param2 in Bots or owner:
-                        X = random.choice(KAC).getGroup(op.param1)
+                        X = cl.getGroup(op.param1)
                         X.preventJoinByTicket = False
                         random.choice(KAC).updateGroup(X)
-                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        Ti = cl.reissueGroupTicket(op.param1)
                         kc.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
-                        random.choice(KAC).updateGroup(X)
-                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        cl.updateGroup(X)
+                        Ti = cl.reissueGroupTicket(op.param1)
 			
 		
         if op.type == 13:
