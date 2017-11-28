@@ -205,7 +205,7 @@ def bot(op):
                         G = Amid.getGroup(op.param1)
                         G.preventJoinByTicket = False
                         Amid.updateGroup(G)
-                        Ticket =Amid.reissueGroupTicket(op.param1)
+                        Ticket = Amid.reissueGroupTicket(op.param1)
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         Amid.updateGroup(G)
