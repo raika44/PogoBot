@@ -115,7 +115,8 @@ wait = {
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":True,
-    "protect":True,
+    "Protectgr":True,
+    "protect":False,
     "cancelprotect":False,
     "inviteprotect":False,
     "linkprotect":True,
@@ -433,6 +434,15 @@ def bot(op):
                     pass
                 else:
                     cl.cancelGroupInvitation(op.param1, matched_list)
+		
+        if op.type == 11:
+           if wait["Protectgr"] == True:
+               if op.param2 not in Bots:
+                   G = ka.getGroup(op.param1)
+                   G.preventJoinByTicket = True
+                   random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
+                   random.choice(DEF).updateGroup(G)
+		
         if op.type == 17:
             if op.param2 not in Bots:
                 if op.param2 in Bots:
@@ -637,6 +647,32 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
 #----------------------------------------------------------------------------
+            elif msg.text in ["Gr on","gr on"]:
+              if msg.from_ in admin:
+                if wait["Protectgr"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group On")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectgr"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group On")
+                    else:
+                        cl.sendText(msg.to,"done")
+            elif msg.text in ["Gr off","gr off"]:
+              if msg.from_ in admin:
+                if wait["Protectgr"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group Off")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectgr"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group Off")
+                    else:
+                        cl.sendText(msg.to,"done")
 #------------------------------ OPEN URL ------------------------------------
             elif msg.text.lower() in ["ourl"]:
                 if msg.toType == 2:
