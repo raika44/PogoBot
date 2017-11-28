@@ -291,7 +291,7 @@ def bot(op):
                pass
 
         if op.type == 19:
-                if mid in op.param3:
+                if dmid in op.param3:
                     if op.param2 in Bots:
                         pass
                     try:
