@@ -1138,40 +1138,137 @@ def bot(op):
                     cl.sendText(msg.to,"Nothing invite.")
 #----------------------------------------------------------------------------
 #------------------------------- JOIN GROUP ---------------------------------
-            elif msg.text.lower() in ["join","My waifu sini masuk"]:
-                if msg.from_ in admin:
+            elif msg.text in ["Sini dong","Kuy join","Ayo masuk","My waifu sini"]:
+              if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
                         G.preventJoinByTicket = False
                         cl.updateGroup(G)
                         invsend = 0
                         Ticket = cl.reissueGroupTicket(msg.to)
-                        ki.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
-                        kk.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
                         kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.2)
+                        ko.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.2)
+                        ku.acceptGroupInvitationByTicket(msg.to,Ticket)
                         time.sleep(0.2)
                         G = cl.getGroup(msg.to)
                         G.preventJoinByTicket = True
-                        ki.updateGroup(G)
-                        print "[Command] Join"
+                        cl.updateGroup(G)
+                        print "Bot Complete"
                         G.preventJoinByTicket(G)
-                        ki.updateGroup(G)
+                        cl.updateGroup(G)
+
+            elif msg.text in ["_First join"]:
+              if msg.form_ in admin:
+                  x = ki.getGroup(msg.to)
+                  x.preventJoinByTicket = False
+                  ki.updateGroup(x)
+                  invsend = 0
+                  Ti = ki.reissueGroupTicket(msg.to)
+                  cl.acceptGroupInvitationByTicket(msg.to,Ti)
+                  G = ki.getGroup(msg.to)
+                  G.preventJoinByTicket = True
+                  ki.updateGroup(G)
+                  Ticket = ki.reissueGroupTicket(msg.to)
+
+            elif msg.text in ["_Second join"]:
+              if msg.from_ in admin:
+                  x = cl.getGroup(msg.to)
+                  x.preventJoinByTicket = False
+                  cl.updateGroup(x)
+                  invsend = 0
+                  Ti = cl.reissueGroupTicket(msg.to)
+                  ki.acceptGroupInvitationByTicket(msg.to,Ti)
+                  G = cl.getGroup(msg.to)
+                  G.preventJoinByTicket = True
+                  cl.updateGroup(G)
+                  Ticket = cl.reissueGroupTicket(msg.to)
+
+            elif msg.text in ["_Third join"]:
+              if msg.from_ in admin:
+                  x = cl.getGroup(msg.to)
+                  x.preventJoinByTicket = False
+                  cl.updateGroup(x)
+                  invsend = 0
+                  Ti = cl.reissueGroupTicket(msg.to)
+                  kk.acceptGroupInvitationByTicket(msg.to,Ti)
+                  G = cl.getGroup(msg.to)
+                  G.preventJoinByTicket = True
+                  cl.updateGroup(G)
+                  Ticket = cl.reissueGroupTicket(msg.to)
+                  
+            elif msg.text in ["_Fourth join"]:
+              if msg.from_ in admin:
+                  X = cl.getGroup(msg.to)
+                  X.preventJoinByTicket = False
+                  cl.updateGroup(X)
+                  invsend = 0
+                  Ti = cl.reissueGroupTicket(msg.to)
+                  kc.acceptGroupInvitationByTicket(msg.to,Ti)
+                  G = cl.getGroup(msg.to)
+                  G.preventJoinByTicket = True
+                  cl.updateGroup(G)
+                  Ticket = cl.reissueGroupTicket(msg.to)
 #----------------------------------------------------------------------------
 #-------------------------------- OUT GROUP ---------------------------------
-            elif msg.text.lower() in ["bye","Bye sayang"]:
+    #-------------Fungsi Leave Group Start---------------#
+            elif msg.text in ["Bye all","Bye sayang"]:
+              if msg.from_ in admin:
                 if msg.toType == 2:
-                  if msg.from_ in admin:
-                    print "[Command] Bye"
                     ginfo = cl.getGroup(msg.to)
                     try:
-                        ki.sendText(msg.to,"see you yang")
+			kc.sendText(msg.to,"see you yang")
+                        kc.leaveGroup(msg.to)
+			ko.sendText(msg.to,"makasih sayang")
+                        ko.leaveGroup(msg.to)
+			ku.sendText(msg.to,"dadah bebih")
+                        ku.leaveGroup(msg.to)
+                    except:
+                        pass
+            elif msg.text in ["Bye _Second"]:
+              if msg.from_ in admin:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
                         ki.leaveGroup(msg.to)
-			kk.sendText(msg.to,"makasih sayang")
+                    except:
+                        pass
+            elif msg.text in ["Bye _Third"]:
+              if msg.from_ in admin:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
                         kk.leaveGroup(msg.to)
-			kc.sendText(msg.to,"dadah bebih")
-			kc.leaveGroup(msg.to)
+                    except:
+                        pass
+            elif msg.text in ["Bye _Fourth"]:
+              if msg.from_ in admin:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        kc.leaveGroup(msg.to)
+                    except:
+                        pass
+            elif msg.text in ["Cv1 @bye"]:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        ki.leaveGroup(msg.to)
+                    except:
+                        pass
+            elif msg.text in ["Cv2 @bye"]:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        kk.leaveGroup(msg.to)
+                    except:
+                        pass
+            elif msg.text in ["Cv3 @bye"]:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        kc.leaveGroup(msg.to)
                     except:
                         pass
 #----------------------------------------------------------------------------
@@ -1384,64 +1481,32 @@ def bot(op):
                             pass
 #----------------------------------------------------------------------------
 #----------------------------- TAG ALL MEMBER -------------------------------
-            if msg.text.lower() in ["tagall","Kuchiyose","Kuchiyose no jutsu"]:
-                group = cl.getGroup(msg.to)
-                nama = [contact.mid for contact in group.members]
-                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                if jml <= 100:
-                    mention(msg.to, nama)
-                    if jml > 100 and jml < 200:
-                        for i in range(0, 100):
-                            nm1 += [nama[i]]
-                    mention(msg.to, nm1)
-                    for j in range(101, len(nama)):
-                        nm2 += [nama[j]]
-                    mention(msg.to, nm2)
-                if jml > 200 and jml < 300:
-                    for i in range(0, 100):
-                        nm1 += [nama[i]]
-                    mention(msg.to, nm1)
-                    for j in range(101, 200):
-                        nm2 += [nama[j]]
-                    mention(msg.to, nm2)
-                    for k in range(201, len(nama)):
-                        nm3 += [nama[k]]
-                    mention(msg.to, nm3)
-                if jml > 300 and jml < 400:
-                    for i in range(0, 100):
-                        nm1 += [nama[i]]
-                    mention(msg.to, nm1)
-                    for j in range(101, 200):
-                        nm2 += [nama[j]]
-                    mention(msg.to, nm2)
-                    for k in range(201, 300):
-                        nm3 += [nama[k]]
-                    mention(msg.to, nm3)
-                    for l in range(301, len(nama)):
-                        nm4 += [nama[l]]
-                    mention(msg.to, nm4)
-                if jml > 400 and jml < 500:
-                    for i in range(0, 100):
-                        nm1 += [nama[i]]
-                    mention(msg.to, nm1)
-                    for j in range(101, 200):
-                        nm2 += [nama[j]]
-                    mention(msg.to, nm2)
-                    for k in range(201, 300):
-                        nm3 += [nama[k]]
-                    mention(msg.to, nm3)
-                    for l in range(301, 400):
-                        nm4 += [nama[l]]
-                    mention(msg.to, nm4)
-                    for h in range(401, len(nama)):
-                        nm5 += [nama[h]]
-                    mention(msg.to, nm5)
-                if jml > 500:
-                    cl.sendText(msg.to,'Member melebihi batas.')
-                cnt = Message()
-                cnt.text = "Done : " + str(jml) +  " Members"
-                cnt.to = msg.to
-                cl.sendMessage(cnt)
+            elif msg.text in ["kiwkiw","Tagall","Kuchiyose no jutsu","Summon all member"]:
+                  group = cl.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      cl.sendMessage(msg)
+                  except Exception as error:
+                      print error
 #----------------------------------------------------------------------------
 #------------------------------- CHECK SIDER --------------------------------
             if msg.text.lower() in ["/set"]:
@@ -1593,8 +1658,8 @@ def bot(op):
                         cl.sendText(msg.to,"Error")
 #----------------------------------------------------------------------------
 #------------------------------- Kerang Ajaib -------------------------------
-            elif "Apakah " in msg.text.lower():
-                apk = msg.text.replace("Apakah ","")
+            elif "/apakah " in msg.text.lower():
+                apk = msg.text.replace("/apakah ","")
                 rnd = ['Ya','Tidak']
                 p = random.choice(rnd)
                 cl.sendText(msg.to,p)
