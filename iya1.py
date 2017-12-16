@@ -797,8 +797,8 @@ def bot(op):
                if op.param2 not in Bots:
                    G = ka.getGroup(op.param1)
                    G.preventJoinByTicket = True
-                   random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
-                   random.choice(DEF).updateGroup(G)
+                   random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                   random.choice(KAC).updateGroup(G)
         #------Protect Group Kick finish-----#
          
         if op.type == 13:
@@ -806,7 +806,7 @@ def bot(op):
                if op.param2 not in Bots:
                   group = ka.getGroup(op.param1)
                   gMembMids = [contact.mid for contact in group.invitee]
-                  random.choice(DEF).cancelGroupInvitation(op.param1, gMembMids)
+                  random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
                 
 #===========================================
         if op.type == 32:
